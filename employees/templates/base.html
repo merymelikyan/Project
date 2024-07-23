@@ -15,18 +15,25 @@
     <div class="container">
       <div class="d-flex flex-row justify-content-between align--items-senter w-100">
         <div class="col-6">
-          <a href="#"class="navbar-brand">Employees</a>
+          <a href="#"class="navbar-brand">Armenian site</a>
         </div>
         <div class="d-flex" stile="gap:32px">
-          <a href="#" class="text-wite text-hover fs-5 text-decoration-none">About</a>
-          <a href="#"class="text-wite text-hover fs-5 text-decoration-none">Contact</a>
+          <a href="{% url 'employees' %}"class="text-wite text-hover fs-5 text-decoration-none">Employees</a>
+          <a href="{% url 'about' %}" class="text-wite text-hover fs-5 text-decoration-none">About</a>
+          <a href="{% url 'contact' %}"class="text-wite text-hover fs-5 text-decoration-none">Contact</a>
         </div>
       </div>
     </div>
   </nav>
 
   <main class="container">
+    {% block home_template %}
+
+    {% endblock %}
     {% block employees_template %}  
+
+    {% endblock %}  
+    {% block single_employee_template %}  
 
     {% endblock %}  
     {% block about_template %}

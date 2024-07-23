@@ -17,6 +17,7 @@
           <th>SALLARY</th>
           <th>DEPARTMENT</th>
           <th>CONTRACT EXP</th> 
+          <th>INFO</th> 
         </tr>
       </thead>
       <tbody>
@@ -30,6 +31,9 @@
             <td>{{ employee.salary }}</td>
             <td>{{ employee.department }}</td>
             <td>{{ employee.contract_exp }}</td>
+            <td>
+              <a href="{% url 'single_employee' employee.id %}">See More</a>
+            </td>
           </tr>
         {% endfor %}
       </tbody>
