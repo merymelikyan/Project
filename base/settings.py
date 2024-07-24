@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     "employees.apps.EmployeesConfig",
+    "api.apps.ApiConfig",
+    "tastypie"
 ]
 
 MIDDLEWARE = [
