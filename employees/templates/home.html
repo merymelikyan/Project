@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load i18n %}
 
 {% block seo_block %}
   {% for item in seo %}
@@ -24,36 +25,36 @@
 
 {% block home_template %}
   <div class="mt-5 text-center">
-    <h1>Welcome to our website</h1>
-    <p>This is an our official website</p>
+    <h1>{% trans "Welcome to our website" %}</h1>
+    <p>{% trans "This is our official website" %}</p>
   </div> 
   <div class="mt-5">
     <div class="swiper mySwiper">
     <div class="swiper-wrapper">
       {% for slide in slides %}
-      <div class="swiper-slide position-static">
-        <div 
-          class="slider-conten position-absolute p-5"
-          style="
-            max-width: 300px;
-            background: rgba(0, 0, 0, 0.8);
-            color: #fff;
-            top: 150px;
-            left: 30px;
-          "
-        >
-          <h3>{{slide.title}}</h3>
-          <p>{{slide.descr}}</p>
-          {% if slide.link %}
-            <a class="btn btn-success" href="{{slide.link}}">Read More</a>
-          {% endif %}
+        <div class="swiper-slide position-static">
+          <div 
+            class="slider-conten position-absolute p-5"
+            style="
+              max-width: 300px;
+              background: rgba(0, 0, 0, 0.8);
+              color: #fff;
+              top: 150px;
+              left: 30px;
+            "
+          >
+            <h3>{{slide.title}}</h3>
+            <p>{{slide.descr}}</p>
+            {% if slide.link %}
+              <a class="btn btn-success" href="{{slide.link}}">Read More</a>
+            {% endif %}
+          </div>
+          <img src="{{slide.img.url}}" alt="{{slide.title}}">
         </div>
-        <img src="{{slide.img.url}}" alt="{{slide.title}}">
-      </div>
-    {% endfor %} 
+      {% endfor %} 
     </div>   
     <div class="swiper-button-next"></div>
     <div class="swiper-button-prev"></div>
-    </div>
+  </div>
   </div>
 {% endblock %}

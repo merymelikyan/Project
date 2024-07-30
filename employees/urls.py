@@ -10,6 +10,7 @@ urlpatterns = [
      path('employees/<int:employee_id>', 
           views.single_employee, name="single_employee"),
      path('about/<int:member_id>', 
-         views.single_member, name="single_member")  
+         views.single_member, name="single_member"),  
+     path('change_lang/', views.change_lang, name='change_lang'),
 ]
     

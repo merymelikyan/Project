@@ -118,3 +118,4 @@ class OG(models.Model):
     class Meta:
         verbose_name = "Open Graph"
         verbose_name_plural = "Open Graphs"
+

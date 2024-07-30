@@ -1,0 +1,58 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-07-30 12:51+0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: employees/templates/base.html:29
+msgid "Employees"
+msgstr "Աշխատակիցներ"
+
+#: employees/templates/base.html:32
+msgid "About"
+msgstr "Մեր մասին"
+
+#: employees/templates/base.html:35
+msgid "Contact"
+msgstr "Կապ"
+
+#: employees/templates/home.html:28
+msgid "Welcome to our website"
+msgstr "Բարի գալուստ մեր կայք"
+
+#: employees/templates/home.html:29
+msgid "This is our official website"
+msgstr "Սա մեր պաշտոնական կայքն է"
+
+#: employees/templates/base.html:67
+msgid "All Rights Reserved"
+msgstr "Բոլոր իրավունքները պաշտպանված են"
+
+#: employees/templates/base.html:38
+msgid "Admin Panel"
+msgstr "Ղեկավարության վահանակ"
+
+
+#~ msgid "ENG"
+#~ msgstr "Անգլերեն"
+
+#~ msgid "RUS"
+#~ msgstr "Ռուսերեն"
+
+#~ msgid "ARM"
+#~ msgstr "Հայերեն"
+
