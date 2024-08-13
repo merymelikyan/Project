@@ -1,10 +1,15 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import JsonResponse
 from django.utils.translation import activate, get_language
 from django.utils import translation
 from django.views.decorators.http import require_POST
-from .models import (
-    Department, 
+from django.contrib.auth import login, authenticate
+from django.contrib.auth.decorators import login_required
+from django.contrib import messages
+
+from .forms import SignUpForm
+
+from .models import ( 
     Employee, 
     About, 
     Contact, 
@@ -25,6 +30,8 @@ def index(request):
         "og": og
         })
 
+
+
 def employees(request):
     employees = Employee.objects.all()
     seo = SEO.objects.filter(tag="employees")
@@ -34,6 +41,7 @@ def employees(request):
         "seo": seo,
         "og": og
     })
+
 
 def about(request):
     about_text = About.objects.all()
@@ -46,6 +54,7 @@ def about(request):
         "seo": seo,
         "og": og
     })
+
 
 def contact(request):
     contact_text = Contact.objects.all()
@@ -88,3 +97,28 @@ def change_lang(request):
         request.session[translation.LANGUAGE_SESSION_KEY] = language
         return JsonResponse({"success": True, "language": get_language()})
     return JsonResponse({"success": False})
+
+
+def signup(request):
+    if request.method == "POST":
+        form = SignUpForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            raw_password = form.cleaned_data.get("password1")
+            user = authenticate(username=user.username, password=raw_password)
+            if user is not None:
+                login(request, user)
+                return redirect("app:profile")
+            else:
+                messages.error(request, "Auth Error")
+        else:
+            messages.error(request, "Form is not valid")
+    else:
+        form = SignUpForm()
+    return render(request, "signup.html", {"form": form})
+
+
+@login_required
+def profile(request):
+    return render(request, "profile.html")
+
